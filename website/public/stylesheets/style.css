@@ -1,0 +1,33 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#name, #addme, #password {
+    font-size: 250%;
+}
+
+#user-list {
+    float: right;
+    width: 25%;
+}
+
+li.admin {
+    color: red;
+}
+
+li.current_user {
+    color: blue
+}
+
+div.main, div.control {
+    display:none;
+}
+
+div.admin_main {
+    display: none;
+}

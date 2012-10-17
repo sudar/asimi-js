@@ -1,0 +1,10 @@
+{
+    "name": "asimi-js"
+  , "description": "An express.js based webapp that allows you to control Arduino based robots from anywhere"
+  , "version": "0.0.1"
+  , "private": true
+  , "dependencies": {
+      "express": "2.5.8"
+    , "jade": ">= 0.0.1"
+  }
+}

@@ -1,0 +1,11 @@
+div#user-list
+    h2 Currently Online users
+    ul
+    - if (users.length)
+        - users.forEach(function(user){
+            - if (user=='Sudar') {
+                li.admin= user   
+            - } else {
+                li= user
+            - }
+        - })

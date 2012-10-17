@@ -1,0 +1,23 @@
+extends layout
+
+block scripts
+  script(src='/socket.io/socket.io.js')
+  script(src='/javascripts/socket-user.js')
+    
+
+block content
+  h1= title
+  div.login
+    input#name(name='name', placeholder='Enter your name to join', size='30')
+    button#addme Add Me
+  div.main
+    p You have successfully joined the queue to control Asimi. Wait till Sudar gives you the power to control Asimi.
+    -//add a nice animation
+  div.control
+      p You have been given the power to control Asimi by Sudar. Go ahead use the below controls.
+      button#up Up
+      button#left Left
+      button#right Right
+      button#down Down
+      -// add proper controls
+  include includes/user-list.jade

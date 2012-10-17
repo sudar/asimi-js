@@ -1,0 +1,25 @@
+extends layout
+
+block scripts
+  script(src='/socket.io/socket.io.js')
+  script(src='/javascripts/socket-admin.js')
+    
+
+block content
+  h1= title
+  div.login
+    input#name(value='Sudar')
+    input#password(type='password')
+    button#addme Login
+  div.admin_main
+    p Okay, let's play Asimi :)
+    div#admin_user-list
+        ul
+        - if (users.length)
+            - users.forEach(function(user){
+                - if (user=='Sudar') {
+                    li.admin= user   
+                - } else {
+                    li= user
+                - }
+            - })
