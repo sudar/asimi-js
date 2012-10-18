@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost');
+var socket = io.connect('http://hardwarefun.com:3000');
 
 // When chosen
 socket.on('chosen', function () {

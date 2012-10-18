@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost');
+var socket = io.connect('http://hardwarefun.com:3000');
 
 // When the list of users is updated
 socket.on('list', function (data) {

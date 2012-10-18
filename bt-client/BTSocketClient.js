@@ -1,6 +1,6 @@
 var io = require('socket.io-client');
 
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect('http://hardwarefun.com:3000');
 
 // Connected
 socket.on('connect', function () {
