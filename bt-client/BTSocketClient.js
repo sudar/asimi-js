@@ -1,3 +1,11 @@
+/**
+ * Asimi JS - An express.js based webapp that allows you to control Arduino based robots from anywhere
+ *
+ * http://hardwarefun.com/projects/asimijs
+ *
+ * Author: Sudar
+ */
+
 var io = require('socket.io-client');
 
 var socket = io.connect('http://hardwarefun.com:3000');

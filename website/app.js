@@ -1,3 +1,10 @@
+/**
+ * Asimi JS - An express.js based webapp that allows you to control Arduino based robots from anywhere
+ *
+ * http://hardwarefun.com/projects/asimijs
+ *
+ * Author: Sudar
+ */
 
 /**
  * Module dependencies.
@@ -32,7 +39,7 @@ app.configure(function(){
 });
 
 app.configure('development', function(){
-  app.use(express.errorHandler());
+    app.use(express.errorHandler());
 });
 
 app.get('/', 
@@ -49,14 +56,13 @@ app.get('/admin',
     },
     admin.admin);
 
-app.get('/users', user.list);
-
 server.listen(app.get('port'), function(){
     console.log("Express server listening on port " + app.get('port'));
 });
 
 io.sockets.on('connection', function (socket) {
 
+    // When new users join
   socket.on('join', function (data, fn) {
 
     if (data.nickname === 'Sudar') {
@@ -85,8 +91,6 @@ io.sockets.on('connection', function (socket) {
         socket.broadcast.emit('list', {list: Object.keys(connectedUsers)})  ; // for all others
         fn(true);
     });
-
-    //var clients = io.sockets.clients();
   });
 
     // ------------- admin events
@@ -111,7 +115,7 @@ io.sockets.on('connection', function (socket) {
 
     socket.on('clientjoin', function (data) {
         client_socket = socket;
-        console.log("Client joined");
+        console.log("BT Client joined");
     });
 
     // --------------- control events
@@ -121,6 +125,7 @@ io.sockets.on('connection', function (socket) {
             if (nickname && nickname == current_user) {
                 if (client_socket) {
                     client_socket.emit('up', {});     
+                    console.log("Up control");
                 }
             }  
         });        
@@ -131,6 +136,7 @@ io.sockets.on('connection', function (socket) {
             if (nickname && nickname == current_user) {
                 if (client_socket) {
                     client_socket.emit('left', {});     
+                    console.log("Left control");
                 }
             }  
         });        
@@ -141,6 +147,7 @@ io.sockets.on('connection', function (socket) {
             if (nickname && nickname == current_user) {
                 if (client_socket) {
                     client_socket.emit('right', {});     
+                    console.log("Right control");
                 }
             }  
         });        
@@ -151,31 +158,25 @@ io.sockets.on('connection', function (socket) {
             if (nickname && nickname == current_user) {
                 if (client_socket) {
                     client_socket.emit('down', {});     
+                    console.log("Down control");
                 }
             }  
         });        
     });
 
-    // --------------- user events
-    
-    // Get the list of users
-  socket.on('getlist', function () {
-      socket.emit('list', {list: Object.keys(connectedUsers)})  ;
-  });
-
     // When a client disconnects
-  socket.on('disconnect', function () {
-    socket.get('nickname', function (err, nickname) {
-        if (nickname) {
-            // TODO: Handle Sudar logging out
-            
-            delete connectedUsers[nickname]    ;
-            socket.broadcast.emit('list', {list: Object.keys(connectedUsers)})  ; // for all others
-            console.log(nickname + " logged out")
-        } else {
-            // Un named client has quit
-        }
+    socket.on('disconnect', function () {
+        socket.get('nickname', function (err, nickname) {
+            if (nickname) {
+                // TODO: Handle Sudar logging out
+
+                delete connectedUsers[nickname]    ;
+                socket.broadcast.emit('list', {list: Object.keys(connectedUsers)})  ; // for all others
+                console.log(nickname + " logged out")
+            } else {
+                // Un named client has quit
+            }
+        });
     });
-  });
 
 });
