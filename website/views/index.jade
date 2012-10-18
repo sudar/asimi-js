@@ -15,9 +15,11 @@ block content
     -//add a nice animation
   div.control
       p You have been given the power to control Asimi by Sudar. Go ahead use the below controls.
-      button#up Up
-      button#left Left
-      button#right Right
-      button#down Down
-      -// add proper controls
+      div
+        img#up(src='/images/triangle.gif')
+        br
+        img#left(src='/images/triangle.gif')
+        img#right(src='/images/triangle.gif')
+        br
+        img#down(src='/images/triangle.gif')
   include includes/user-list.jade

@@ -31,3 +31,39 @@ div.main, div.control {
 div.admin_main {
     display: none;
 }
+
+div.control div {
+
+}
+
+#up, #left, #right, #down {
+    width: 100px;
+}
+
+.img_highlight {
+   box-shadow: 3px 3px 10px 5px #000;
+}
+
+#up {
+   margin-left: 100px;
+}
+
+#left {
+    transform: rotate(270deg);
+   -moz-transform: rotate(270deg);
+   -webkit-transform: rotate(270deg);
+}
+
+#right {
+    transform: rotate(90deg);
+   -moz-transform: rotate(90deg);
+   -webkit-transform: rotate(90deg);
+   margin-left: 100px;
+}
+
+#down {
+    transform: rotate(180deg);
+   -moz-transform: rotate(180deg);
+   -webkit-transform: rotate(180deg);
+   margin-left: 100px;
+}

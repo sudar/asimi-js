@@ -67,6 +67,12 @@ $(document).ready(function () {
         socket.emit('down');    
     });
 
+    $('#up,#left,#right,#down').mousedown(function () {
+        $(this).addClass('img_highlight');
+    }).mouseup(function () {
+        $(this).removeClass('img_highlight');
+    });
+
     // To make enter work
     $('#name').keyup(function (event) {
         if (event.keyCode == 13) {
