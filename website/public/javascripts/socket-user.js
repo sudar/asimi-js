@@ -52,7 +52,7 @@ $(document).ready(function () {
 
     // Controls
     $('#up').click(function() {
-        socket.emit('up');    
+        socket.emit('up');
     });
 
     $('#left').click(function() {
@@ -67,13 +67,17 @@ $(document).ready(function () {
         socket.emit('down');    
     });
 
-    $('#up,#left,#right,#down').mousedown(function () {
+    $('#start').click(function() {
+        socket.emit('start');    
+    });
+
+    $('#up,#left,#right,#down,#start').mousedown(function () {
         $(this).addClass('img_highlight');
     }).mouseup(function () {
         $(this).removeClass('img_highlight');
     });
 
-    // To make enter work
+    // To make enter key work
     $('#name').keyup(function (event) {
         if (event.keyCode == 13) {
             $('#addme').click();

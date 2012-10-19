@@ -36,7 +36,7 @@ div.control div {
 
 }
 
-#up, #left, #right, #down {
+#up, #left, #right, #down, #start {
     width: 100px;
 }
 
@@ -58,7 +58,7 @@ div.control div {
     transform: rotate(90deg);
    -moz-transform: rotate(90deg);
    -webkit-transform: rotate(90deg);
-   margin-left: 100px;
+   /*margin-left: 100px;*/
 }
 
 #down {

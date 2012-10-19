@@ -164,6 +164,17 @@ io.sockets.on('connection', function (socket) {
         });        
     });
 
+    socket.on('start', function () {
+        socket.get('nickname', function (err, nickname) {
+            if (nickname && nickname == current_user) {
+                if (client_socket) {
+                    client_socket.emit('start', {});
+                    console.log("start control");
+                }
+            }
+        });
+    });
+
     // When a client disconnects
     socket.on('disconnect', function () {
         socket.get('nickname', function (err, nickname) {
