@@ -6,7 +6,7 @@
  * Author: Sudar
  */
 
-var io = require('socket.io-client');
+var io = require('socket.io-client'),
     SerialPort = require("serialport").SerialPort,
     bt = new SerialPort("/dev/cu.FireFly-CCFA-SPP"),     // bluetooth serial port
     socket = io.connect('http://hardwarefun.com:3000'),  // server url
