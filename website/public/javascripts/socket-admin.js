@@ -10,14 +10,13 @@ var socket = io.connect('http://hardwarefun.com:3000');
 
 // When the list of users is updated
 socket.on('list', function (data) {
-    console.log("on list received user count: " + data.list.length);
-    $('#admin_user-list li').remove();
+    $('#user-list li').remove();
 
     for (var i = 0; i < data.list.length; i++) {
         if (data.list[i] == 'Sudar') {
-            $('#admin_user-list ul').append('<li class = "admin">' + data.list[i] + '</li>');
+            $('#user-list ul').append('<li class = "admin">' + data.list[i] + '</li>');
         } else {
-            $('#admin_user-list ul').append('<li>' + data.list[i] + '</li>');
+            $('#user-list ul').append('<li>' + data.list[i] + '</li>');
         }
     }
 });
@@ -43,7 +42,7 @@ $(document).ready(function () {
     });
 
     // choosing a user
-    $('#admin_user-list ul').delegate('li', 'click', function () {
+    $('#user-list ul').delegate('li', 'click', function () {
         var user = $(this).text();
 
         if (user != '') {

@@ -1,26 +1,22 @@
 extends layout
 
 block scripts
-  script(src='/socket.io/socket.io.js')
   script(src='/javascripts/socket-user.js')
     
 
 block content
-  h1= title
-  div.login
-    input#name(name='name', placeholder='Enter your name to join', size='30')
-    button#addme Add Me
-  div.main
-    p You have successfully joined the queue to control Asimi. Wait till Sudar gives you the power to control Asimi.
-    -//add a nice animation
-  div.control
-      p You have been given the power to control Asimi by Sudar. Go ahead use the below controls. Remember, with great power comes great responsibility.
-      div
-        img#up(src='/images/triangle.gif')
-        br
-        img#left(src='/images/triangle.gif')
-        img#start(src='/images/circle.png')
-        img#right(src='/images/triangle.gif')
-        br
-        img#down(src='/images/triangle.gif')
-  include includes/user-list.jade
+    div.login
+        input#name(name='name', placeholder='Enter your name to join', size='20')
+        button#addme Add Me
+    div.main
+        p You have successfully joined the queue to control Asimi. Wait till Sudar gives you the power to control Asimi.
+    div.control
+        p You have been given the power to control Asimi by Sudar. Go ahead use the below controls. Remember, with great power comes great responsibility.
+        div
+            img#up(src='/images/triangle.gif')
+            br
+            img#left(src='/images/triangle.gif')
+            img#start(src='/images/circle.png')
+            img#right(src='/images/triangle.gif')
+            br
+            img#down(src='/images/triangle.gif')

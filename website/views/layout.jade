@@ -3,7 +3,19 @@ html
   head
     title= title
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
+    script(src='/socket.io/socket.io.js')
     block scripts
+    link(rel='stylesheet', href='http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+  body.yui-skin-sam
+    div#doc.yui-t4
+        div#hd(role="banner")
+            h1= title
+        div#bd(role="main")
+            div#yui-main
+                div.yui-b
+                    div.yui-g
+                        block content
+            div.yui-b(role="navigation")
+                include includes/user-list.jade
+        div#ft(role="contentinfo")

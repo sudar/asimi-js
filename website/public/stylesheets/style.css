@@ -1,6 +1,13 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#hd {
+    margin-bottom: 50px;
+}
+
+#hd h1 {
+    font-size: 300%;
 }
 
 a {
@@ -11,9 +18,17 @@ a {
     font-size: 250%;
 }
 
-#user-list {
-    float: right;
-    width: 25%;
+h2 {
+    font-size: 150%;
+}
+
+#user-list ul {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#user-list ul li {
+    list-style-type: disc;
 }
 
 li.admin {
@@ -30,10 +45,6 @@ div.main, div.control {
 
 div.admin_main {
     display: none;
-}
-
-div.control div {
-
 }
 
 #up, #left, #right, #down, #start {
