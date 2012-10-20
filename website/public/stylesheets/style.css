@@ -10,6 +10,10 @@ body {
     font-size: 300%;
 }
 
+#ft {
+    margin-top: 100px;
+}
+
 a {
   color: #00B7FF;
 }
