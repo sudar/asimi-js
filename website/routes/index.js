@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Asimi JS', users: req.users});
+  res.render('user', { title: 'Asimi JS', users: req.users});
 };
