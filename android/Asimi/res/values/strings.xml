@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">Asimi</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Asimi Bot Controller</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+
+</resources>
